@@ -1,0 +1,13 @@
+{
+  "name": "Localhoster",
+  "description": "change url hostname to localhost",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
