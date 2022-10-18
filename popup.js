@@ -10,9 +10,10 @@ changeUrl.addEventListener("click", async () => {
     alert("no active tab to change url");
     return;
   }
-  const path = new URL(tab.url).pathname;
-  const url = new URL(path, `http://localhost:${port.value}`).href;
-  chrome.tabs.update(tab.id, { url });
+  const url = new URL(tab.url);
+  const path = url.pathname;
+  const params = url.searchParams;
+  chrome.tabs.update(tab.id, { url: `http://localhost:${port.value}${path}?${params}`});
 });
 
 port.addEventListener("change", (e) => {
